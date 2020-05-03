@@ -11,9 +11,8 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Simple Catto Doggo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
-      aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">Simple Cat and Dog Classification</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
@@ -22,15 +21,12 @@
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
       </ul>
-      <span class="navbar-text">
-        Simple Flask With Upload Functionality
-      </span>
     </div>
   </nav>
   <div class="container-fluid">
     <div class="row">
       <div class="col image-prediction">
-        <img class="pred_img" src="{{ url_for('send_file', filename=image_file_name)}}" />
+        <img class="pred_img" src="{{ image_file_name }}" />
       </div>
       <div class="col text-prediction">
 

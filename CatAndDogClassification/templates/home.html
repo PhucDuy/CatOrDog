@@ -7,13 +7,15 @@
   <title>Catto & Doggo Classifier</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="/static/style.css" type="text/css">
+  {{ dropzone.load_css() }}
+
+  {{ dropzone.style('border: 2px dashed #0087F7; margin: 10%; min-height: 400px; background-color: rgba(255, 255, 255, 0.2);') }}
 
 </head>
 
 <body>
-
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Simple Catto Doggo</a>
+    <a class="navbar-brand" href="#">Simple Cat and Dog Classification</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,30 +25,16 @@
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li>
       </ul>
-      <span class="navbar-text">
-        Simple Flask With Upload Functionality
-      </span>
     </div>
   </nav>
 
   <div class="container-fluid">
-
+    <div style="position: fixed; z-index: -99; width: 100%; height: 100%; background-size: 100%; background-image: url('https://www.itl.cat/pngfile/big/228-2284194_cat-and-dog-wallpaper-hd.jpg');"/>
     <div class="classify">
       <div>
-        <h2>
-          Hi, Please upload your dog or cat image here!
-        </h2>
-      </div>
-      <div>
-        <form action="/classify" method="post" enctype="multipart/form-data">
-          <div class="file has-name is-centered">
-            <label class="file-label">
-              <input class="file-input" type="file" id="image" name="image">
-            </label>
-          </div>
-          <br>
-          <input type="submit" value="Classify" class="btn btn-danger" name="image" id="classify_button">
-        </form>
+        {{ dropzone.create('home') }}
+        {{ dropzone.load_js() }}
+        {{ dropzone.config() }}
       </div>
     </div>
   </div>
